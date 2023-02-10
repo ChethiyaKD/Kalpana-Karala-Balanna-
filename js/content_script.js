@@ -71,7 +71,7 @@ const init = () => {
     }
     if (searchButton2) {
       searchButton2.value = "නැද්ද හා";
-      clearInterval(timer);
+      // clearInterval(timer);
     }
     let currentTitle = document.title;
     let newTitle = currentTitle.replace("Google", "කල්පනා කරලා බලන්න");
