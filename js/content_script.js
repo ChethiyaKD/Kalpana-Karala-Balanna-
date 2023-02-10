@@ -2,11 +2,25 @@ const changeGooogle = () => {
   let timer = setInterval(() => {
     let elems = document.querySelectorAll(".SJajHc");
     if (elems.length === 0) return;
-    
+
     clearInterval(timer);
-    
+
+    for (let index in elems) {
+      if (index == 0) {
+        elems[index].style =
+          "background:url(https://raw.githubusercontent.com/ChethiyaKD/Kalpana-Karala-Balanna-/main/images/kayanna.png) no-repeat;background-position:center;background-size:25px;width:28px";
+        continue;
+      }
+      if (index == elems.length - 1) {
+        elems[index].style =
+          "background:url(https://raw.githubusercontent.com/ChethiyaKD/Kalpana-Karala-Balanna-/main/images/panaa.png) no-repeat;background-position: 0 5px;background-size:50px;width:71px";
+        continue;
+      }
+      elems[index].style =
+        "background:url(https://raw.githubusercontent.com/ChethiyaKD/Kalpana-Karala-Balanna-/main/images/layanna.png) no-repeat;background-position: -5px 3px;background-size: 27px;width:20px";
+    }
   }, 100);
-}
+};
 
 const addSahodaraya = () => {
   let timer = setInterval(() => {
@@ -16,7 +30,6 @@ const addSahodaraya = () => {
 
       parent.style.display = "flex";
       parent.style.justifyContent = "space-between";
-
 
       let anchorNode = document.createElement("a");
       anchorNode.innerHTML = "Made by කුසල් සහෝදරයා";
@@ -32,6 +45,7 @@ const addSahodaraya = () => {
 
 const init = () => {
   addSahodaraya();
+  changeGooogle();
 
   let timer = setInterval(() => {
     let googleLogo = document.querySelector("img[class='lnXdpd']");
