@@ -1,3 +1,63 @@
+const handleFirstTime = () => {
+  let isAnimated = localStorage.getItem("animated");
+  if (isAnimated) return;
+
+  let timer = setInterval(() => {
+    let searchInput = document.querySelector("input[name='q']");
+    let searchForm = document.querySelector("form[action='/search']");
+    if (!searchInput) return;
+    clearInterval(timer);
+
+    setTimeout(() => {
+      searchInput.value = "s";
+    }, 2000);
+    setTimeout(() => {
+      searchInput.value = "sa";
+    }, 2500);
+    setTimeout(() => {
+      searchInput.value = "sah";
+    }, 3000);
+    setTimeout(() => {
+      searchInput.value = "saho";
+    }, 3700);
+    setTimeout(() => {
+        localStorage.setItem("animated", true);
+      if (searchForm) searchForm.submit();
+    }, 5000);
+  }, 100);
+};
+
+const isSaho = () => {
+  let timer = setInterval(() => {
+    if (!window.location.search.includes("q=saho")) return;
+    clearInterval(timer);
+    play();
+  }, 100);
+};
+
+const googleOfferedIn = () => {
+  let timer = setInterval(() => {
+    let offeredIn = document.querySelector("#SIvCob");
+    if (!offeredIn) return;
+    offeredIn.innerHTML = offeredIn.innerHTML.replace(
+      "Google offered in:",
+      "අපිට දෙකම පුලුවන්:"
+    );
+  }, 100);
+};
+
+const changeMaps = () => {
+  let timer = setInterval(() => {
+    let aS = document.querySelectorAll("a");
+    // let spans = document.querySelectorAll("span");
+    for (a of aS)
+      if (a.textContent === "Maps")
+        a.innerHTML = a.innerHTML.replace("Maps", "මේ පාර කොහාටද?");
+    // for (let span of spans)
+    //   if (span.textContent === "Maps") span.textContent = "මේ පාර කොහාටද?";
+  }, 300);
+};
+
 const changeGooogle = () => {
   let timer = setInterval(() => {
     let elems = document.querySelectorAll(".SJajHc");
@@ -46,6 +106,10 @@ const addSahodaraya = () => {
 const init = () => {
   addSahodaraya();
   changeGooogle();
+  changeMaps();
+  googleOfferedIn();
+  isSaho();
+  handleFirstTime();
 
   let timer = setInterval(() => {
     let googleLogo = document.querySelector("img[class='lnXdpd']");
