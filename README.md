@@ -14,6 +14,18 @@
 
 <img width="500" alt="Screenshot 2023-02-09 at 18 01 36" src="https://user-images.githubusercontent.com/79355885/218240050-d6d1e44a-b2dd-43d7-b6fb-2de39569b819.png">
 
+# What's new
+
+### 1.1.3
+
+* Emoji Animation on "saho" search
+* Changed "Google offered in: " to "අපිට දෙකම පුලුවන්"
+* Changed "Maps" to "මේ පාර කොහාටද?"
+
+<img width="500" alt="Screenshot 2023-02-09 at 18 01 36" src="https://user-images.githubusercontent.com/39989150/218255452-276f0bb9-0530-40ea-8228-84cb5cdf1369.png">
+
+
+
 # Developers
 
 Extension - [@ChethiyaKD](https://github.com/ChethiyaKD)</br>
