@@ -22,8 +22,9 @@ const play = () => {
     elem.style.transform = transform;
     elem.style.transition = `all 3s ease-in-out`;
     elem.style.zIndex = "9999";
-    elem.innerHTML = `🤌`;
+    elem.innerHTML = `<img src="${chrome.runtime.getURL(
+      "images/fingers.png"
+    )}" width="18px" height="auto" />`;
     document.body.appendChild(elem);
   }
 };
-
