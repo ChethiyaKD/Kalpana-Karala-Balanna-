@@ -120,7 +120,7 @@ const init = () => {
     );
     if (googleLogo) {
       googleLogo.src =
-        "https://uvindubro.me/kalpana/images/kalpana-engine-logo-01.svg";
+        chrome.runtime.getURL("images/logo.svg");
       googleLogo.srcset =
         "https://uvindubro.me/kalpana/images/kalpana-engine-logo-01.svg";
     }
