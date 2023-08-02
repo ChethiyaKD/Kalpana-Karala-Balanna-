@@ -1,23 +1,46 @@
 .emojiBox {
-    left: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  animation: animate 3s ease-in-out;
+}
+.castle {
+  position: absolute;
+  bottom: 150px;
+  right: -100px;
+  animation: sneakAndRun 4s linear;
+}
+.prince {
+  height: 200px;
+}
+
+@keyframes animate {
+  0% {
     opacity: 0;
-    transition: all 0.3s ease-in-out;
-    animation: animate 3s ease-in-out;
+    scale: 1;
   }
-  
-  @keyframes animate {
-    0% {
-      opacity: 0;
-      scale: 1;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 0;
-    }
-    100% {
-      font-size: 1.5;
-    }
+  10% {
+    opacity: 1;
   }
-  
+  90% {
+    opacity: 0;
+  }
+  100% {
+    font-size: 1.5;
+  }
+}
+
+@keyframes sneakAndRun {
+  0% {
+    transform: translateX(0) rotate(-30deg);
+  }
+  40% {
+    transform: translateX(-50px) scale(1.2) rotate(-30deg);
+    opacity: 0.8;
+  }
+  50%,
+  100% {
+    transform: translateX(calc(100% + 100px)) scale(1) rotate(-30deg);
+    opacity: 0;
+  }
+}

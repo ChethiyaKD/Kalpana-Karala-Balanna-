@@ -1,3 +1,34 @@
+const getRandomImageVisibility = () => {
+  const randomNumber = Math.random();
+  const visibilityThreshold = 0.25;
+  const isVisible = randomNumber < visibilityThreshold;
+  return {
+    randomNumber,
+    isVisible,
+  };
+};
+
+const randomPrince = () => {
+  
+  const { isVisible } = getRandomImageVisibility();
+  if (!isVisible) return;
+
+  const parentNode = document.createElement("div");
+  parentNode.className = "castle";
+  parentNode.id = "kumaraInTheCastle";
+  parentNode.innerHTML = `
+  <img src=${chrome.runtime.getURL(
+    "images/prince-anu.png"
+  )} class="prince" id="prince">
+  `;
+
+  document.body.appendChild(parentNode);
+
+  setTimeout(()=>{
+    document.querySelector("#kumaraInTheCastle").remove()
+  },3000)
+};
+
 const handleFirstTime = () => {
   let isAnimated = localStorage.getItem("animated");
   if (isAnimated) return;
@@ -21,7 +52,7 @@ const handleFirstTime = () => {
       searchInput.value = "saho";
     }, 3700);
     setTimeout(() => {
-        localStorage.setItem("animated", true);
+      localStorage.setItem("animated", true);
       if (searchForm) searchForm.submit();
     }, 5000);
   }, 100);
@@ -110,6 +141,7 @@ const init = () => {
   googleOfferedIn();
   isSaho();
   handleFirstTime();
+  randomPrince();
 
   let timer = setInterval(() => {
     let googleLogo = document.querySelector("img[class='lnXdpd']");
@@ -119,8 +151,7 @@ const init = () => {
       `input[value="I'm Feeling Lucky"]`
     );
     if (googleLogo) {
-      googleLogo.src =
-        chrome.runtime.getURL("images/logo.svg");
+      googleLogo.src = chrome.runtime.getURL("images/logo.svg");
       googleLogo.srcset =
         "https://uvindubro.me/kalpana/images/kalpana-engine-logo-01.svg";
     }
