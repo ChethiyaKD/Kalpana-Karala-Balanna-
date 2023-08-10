@@ -1,6 +1,6 @@
 # Privacy Policy for Kalpana Karala Balanna Chrome Extension
 
-Effective Date: [Insert Effective Date]
+Effective Date: 10-08-2023
 
 ## Introduction
 
