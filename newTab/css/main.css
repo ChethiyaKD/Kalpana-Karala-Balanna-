@@ -80,7 +80,7 @@ body {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .quick-access .quick-access-button {
