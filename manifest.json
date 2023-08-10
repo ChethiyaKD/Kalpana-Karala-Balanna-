@@ -26,7 +26,12 @@
   "background": {
     "service_worker": "js/service_worker.js"
   },
+  "chrome_url_overrides": {
+    "newtab": "./newTab/newTab.html"
+  },
+
   "host_permissions": ["<all_urls>"],
+  "permissions": ["topSites"],
   "web_accessible_resources": [
     {
       "resources": ["images/*"],
