@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .emojiBox {
   left: 0;
   opacity: 0;
